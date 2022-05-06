@@ -29,7 +29,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
 @ExperimentalMaterialApi
 @Composable
 fun MainActivityScreen(viewModel: MainViewModel) {

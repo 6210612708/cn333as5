@@ -182,7 +182,7 @@ fun SaveNoteTopAppBar(
 
             IconButton(onClick = onOpenTagPickerClick,) {
                 Icon(
-                    painter = painterResource(id = R.drawable.sell24),
+                    painter = painterResource(id = R.drawable.tag),
                     contentDescription = "Save Note Button",
                     tint = MaterialTheme.colors.onPrimary
                 )

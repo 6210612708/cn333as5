@@ -11,6 +11,6 @@ class MainViewModelFactory(
         if (modelClass.isAssignableFrom(MainViewModel::class.java)) {
             return MainViewModel(application) as T
         }
-        throw IllegalArgumentException("Unknown ViewModel class")
+        throw IllegalArgumentException("Invalid ViewModel class")
     }
 }

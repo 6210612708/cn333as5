@@ -57,39 +57,39 @@ class MainViewModel(application: Application) : ViewModel() {
         MyNotesRouter.navigateTo(Screen.SaveNote)
     }
 
-    fun onNoteCheckedChange(note: NoteModel) {
-        viewModelScope.launch(Dispatchers.Default) {
-            repository.insertNote(note)
-        }
-    }
-
-    fun onNoteSelected(note: NoteModel) {
-        _selectedNotes.value = _selectedNotes.value!!.toMutableList().apply {
-            if (contains(note)) {
-                remove(note)
-            } else {
-                add(note)
-            }
-        }
-    }
-
-    fun restoreNotes(notes: List<NoteModel>) {
-        viewModelScope.launch(Dispatchers.Default) {
-            repository.restoreNotesFromTrash(notes.map { it.id })
-            withContext(Dispatchers.Main) {
-                _selectedNotes.value = listOf()
-            }
-        }
-    }
-
-    fun permanentlyDeleteNotes(notes: List<NoteModel>) {
-        viewModelScope.launch(Dispatchers.Default) {
-            repository.deleteNotes(notes.map { it.id })
-            withContext(Dispatchers.Main) {
-                _selectedNotes.value = listOf()
-            }
-        }
-    }
+//    fun onNoteCheckedChange(note: NoteModel) {
+//        viewModelScope.launch(Dispatchers.Default) {
+//            repository.insertNote(note)
+//        }
+//    }
+//
+//    fun onNoteSelected(note: NoteModel) {
+//        _selectedNotes.value = _selectedNotes.value!!.toMutableList().apply {
+//            if (contains(note)) {
+//                remove(note)
+//            } else {
+//                add(note)
+//            }
+//        }
+//    }
+//
+//    fun restoreNotes(notes: List<NoteModel>) {
+//        viewModelScope.launch(Dispatchers.Default) {
+//            repository.restoreNotesFromTrash(notes.map { it.id })
+//            withContext(Dispatchers.Main) {
+//                _selectedNotes.value = listOf()
+//            }
+//        }
+//    }
+//
+//    fun permanentlyDeleteNotes(notes: List<NoteModel>) {
+//        viewModelScope.launch(Dispatchers.Default) {
+//            repository.deleteNotes(notes.map { it.id })
+//            withContext(Dispatchers.Main) {
+//                _selectedNotes.value = listOf()
+//            }
+//        }
+//    }
 
     fun onNoteEntryChange(note: NoteModel) {
         _noteEntry.value = note

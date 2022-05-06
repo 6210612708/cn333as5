@@ -16,8 +16,8 @@ data class NoteDbModel(
 ) {
     companion object {
         val DEFAULT_NOTES = listOf(
-            NoteDbModel(1, "Adam Smith", "0987887583",  1, 2,false),
-            NoteDbModel(2, "Bill Crimson", "0629341489",  2, 2,false),
+            NoteDbModel(1, "A", "0000000000",  1, 2,false),
+            NoteDbModel(2, "B", "0123456789",  2, 2,false),
 
         )
     }
